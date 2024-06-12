@@ -1,0 +1,19 @@
+{
+  "name": "ej2",
+  "version": "1.0.0",
+  "main": "ej2.js",
+  "scripts": {
+    "star": "node ej2.js",
+    "dev": "nodemon ej2.js"
+  },
+  "keywords": [],
+  "author": "Marjorie gonzaga",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.3"
+  }
+}
