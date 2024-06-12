@@ -4,7 +4,7 @@ const PORT = 3000
 app.use(exprees.json())
 
 app.listen(PORT, ()=> {
-    console.log (`Servidor levantado en el puerto ${PORT}`)
+    console.log (`Servidor levantado en el puerto ${PORT}`) 
 })
 
 
