@@ -32,7 +32,7 @@ app.post('/newProduct', (req, res) => {
 	const newProduct = {
 		id: productsItem.length + 1,
 		nombre: req.body.nombre,
-    precio: req.body.precio
+    	precio: req.body.precio
 	
 	}
 	if (req.body.nombre === '' || req.body.precio === '') {
@@ -64,4 +64,41 @@ app.put ('/updateProducts/id/:id', (req,res) =>{
 app.delete('/deleteProducts/id/:id', (req, res) => {
 	const result = productsItem.filter(item => item.id !== +req.params.id) //El + es para convertir a numero la peticion de id
 	res.status(200).send(result)
+})
+
+
+//Crear filtro por precio de producto
+app.get ('/paramPrecio/precio/:precio', (req,res)=> {
+	const paramPrecio = productsItem.find(item => item.precio === +req.params.precio)
+	if (paramPrecio) {
+		res.status(200).send({ message:'Precio solicitado', item: paramPrecio  })
+	} else {
+		res.status(404).send({ message:'No se encontro ese precio o no existe' })
+	}
+})
+
+
+//Crear filtro que muestre los productos con un precio entre 50 y 250.
+
+
+
+//Crear un filtro que cuando busque en postman por parámetro el id de un producto me devuelva ese producto
+
+app.get ('/paramId/id/:id', (req,res)=> {
+	const paramid = productsItem.find(item => item.id === +req.params.id)
+	if (paramid) {
+		res.status(200).send({ message:'Producto solicitado', item: paramid  })
+	} else {
+		res.status(404).send({ message:'Error no se encontro ese Id o no existe ' })
+	}
+})
+
+//Crear un filtro que cuando busque en postman por parámetro el nombre de un producto me devuelva ese producto
+app.get ('/paramName/nombre/:nombre', (req,res)=> {
+	const paramName = productsItem.find(item => item.nombre === req.params.nombre)
+	if (paramName) {
+		res.status(200).send({ message:'Nombre solicitado', item: paramName  })
+	} else {
+		res.status(404).send({ message:'Error no se econtro el nombre o no existe' })
+	}
 })
