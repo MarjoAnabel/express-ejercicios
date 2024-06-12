@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "ej3.js",
   "scripts": {
-    "start": "node eje3.js",
-    "dev": "nodemon eje3.js"
+    "start": "node eje.js",
+    "dev": "nodemon eje.js"
   },
   "keywords": [],
   "author": "Marjorie Gonzaga",
