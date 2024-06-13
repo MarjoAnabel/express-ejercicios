@@ -79,17 +79,15 @@ app.get ('/paramPrecio/precio/:precio', (req,res)=> {
 
 
 //Crear filtro que muestre los productos con un precio entre 50 y 250.
-// app.get ('/paramPrecioMinMax/precio/:preciomin + :preciomax', (req,res)=> {
+app.get ('/paramPrecioMinMax/precio/:preciomin + :preciomax', (req,res)=> {
 
-// 	const minprice = min 
-// 	const maxprice = max 
-// 	const paramPrecioMinMax = productsItem.find(item => item.precio === +req.params.id)
-// 	if (paramid) {
-// 		res.status(200).send({ message:'Producto solicitado', item: paramPrecioMinMax  })
-// 	} else {
-// 		res.status(404).send({ message:'Error no se encontro ese Id o no existe ' })
-// 	}
-// })
+	const paramPrecioMinMax = productsItem.find(item => item.precio === +req.params.id)
+	if (paramid) {
+		res.status(200).send({ message:'Producto solicitado', item: paramPrecioMinMax  })
+	} else {
+		res.status(404).send({ message:'Error no se encontro ese Id o no existe ' })
+	}
+})
 
 
 
